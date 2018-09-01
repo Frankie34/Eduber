@@ -23,6 +23,8 @@ class TodoList extends React.Component {
   @observable newTodoPriority = "";
   @observable num = "";
   @observable num1 = "";
+  @observable txt1 = "";
+  @observable txt2 = "";
 
   generateMessage() {
   let fromClient = nkn({
@@ -45,6 +47,7 @@ class TodoList extends React.Component {
           ).then((data) => {
             timeReceived = new Date();
             console.log('Receive', '"' + data + '"', 'from', toClient.addr, 'after', timeReceived - timeSent, 'ms');
+            document.write('Receive', '"' + data + '"', 'from', toClient.addr, 'after', timeReceived - timeSent, 'ms');
           }).catch((e) => {
             console.log('Catch: ', e);
           });
@@ -95,7 +98,11 @@ class TodoList extends React.Component {
 
   render() {
     this.generateMessage();
-    return (
+    return(
+      <div>
+      </div>
+    );
+      /*
       <div>
       <div>
         <form onSubmit={this.handleFormSubmit1}>
@@ -155,7 +162,8 @@ class TodoList extends React.Component {
         </ul>
         Tasks left: {this.props.store.unfinishedTodoCount}
       </div>
-    );
+      */
+
   }
 
   @action

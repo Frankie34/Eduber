@@ -28,8 +28,9 @@
 
 .txt {
   position: absolute;
-  left: 20px;
+  left: 0px;
 }
+
 .picDiv {
   margin-top: 40px;
   display: flex;
@@ -64,3 +65,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+ul {
+ list-style-type: none;
+ list-style-position: outside;
+ list-style-image: none;
+}
+
+
+.gridformat0 {
+  width: 50%;
+  display: inline-block;
+}
+.gridformat1 {
+  width: 30%;
+  display: inline-block;
+}
+
