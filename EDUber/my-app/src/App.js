@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './icon.svg';
+import logo from './static/img/logo.png';
 import './App.css';
 import TodoList from "./components/TodoList";
 import TodoListModel from "./models/TodoListModel";
@@ -21,10 +21,13 @@ class App extends Component {
       <div className="App">
        <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to EDUBER</h2>
+        <div className="App-title">
+          <h2>Welcome to NKN SEGTRAN</h2>
         </div>
+        </div>
+        <div className="txtContent">
         <Hive store={store}/>
-
+        </div>
 
       </div>
 

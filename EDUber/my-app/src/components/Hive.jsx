@@ -14,6 +14,7 @@ const nkn = require('nkn-client');
 // const seedRpcServerAddr = 'http://127.0.0.1:30003';
 const timeout = 5000;
 var timeSent, timeReceived;
+var amessage = "";
 
 
 @observer
@@ -24,7 +25,7 @@ class Hive extends React.Component {
   @observable num = "";
 
 
-  generateMessage() {
+  generateMessage(amessage) {
   let fromClient = nkn({
     // neither of these are required, as shown in toClient below
     identifier: crypto.randomBytes(8).toString('hex'),
@@ -39,7 +40,7 @@ class Hive extends React.Component {
         try {
           fromClient.send(
             toClient.addr,
-            'Hello world!',
+            amessage,
             // For byte array:
             // Uint8Array.from([1,2,3,4,5]),
           ).then((data) => {
@@ -96,7 +97,15 @@ class Hive extends React.Component {
   render() {
     return(
       <div>
-      	<div>
+        <div className = "listPart">
+        <ul>
+          {this.props.store.grids.map(grid => (
+            <Grid grid={grid} key={grid.title}/>
+          ))}
+        </ul>
+        </div>
+
+      	<div className = "uiPart">
       	      <div>
       	      	<div>
         		<form onSubmit={this.handleFormSubmit1}>
@@ -114,9 +123,7 @@ class Hive extends React.Component {
 		          <button className = "btn"type="submit">BLANK</button>
 		        </form>
       		  </div>
-        		<form onSubmit={this.get0}>
-        		<button className = "btn" type="submit">Log</button>
-        		</form>
+        		
       		  </div>
              <div>
         <form onSubmit={this.handleFormSubmit0}>
@@ -128,16 +135,14 @@ class Hive extends React.Component {
           />
           <button className = "btn" type="submit">BLANK</button>
         </form>
+
       </div>
+        <form onSubmit={this.get0}>
+            <button className = "btn" type="submit">Log</button>
+        </form>
       	</div>
 
-      	<div className = "listPart">
-      	<ul>
-          {this.props.store.grids.map(grid => (
-            <Grid grid={grid} key={grid.title}/>
-          ))}
-        </ul>
-        </div>
+      	
 
       </div>
     );
