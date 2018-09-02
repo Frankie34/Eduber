@@ -5,6 +5,32 @@ import $ from 'jquery';
 import Grid from "./Grid";
 
 
+const { Environment } = require('libgenaro');
+const libgenaro = new Environment({
+  bridgeUrl: 'http://101.132.159.197:8080',
+  bridgeUser: 'simon@tedxsuzhou.com',
+  bridgePass: 'fdsafdsa',
+  encryptionKey: 'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about',
+  logLevel: 4
+});
+
+
+const bucketId = '368be0816766b28fd5f43af5';
+const filePath = './test-upload.data';
+
+const state = libgenaro.storeFile(bucketId, filePath, {
+  filename: 'test-upload.data',
+  progressCallback: function(progress, downloadedBytes, totalBytes) {
+    console.log('progress:', progress);
+  },
+  finishedCallback: function(err, fileId) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log('File complete:', fileId);
+  }
+});
+
 const crypto = require('crypto');
 const nkn = require('nkn-client');
 
