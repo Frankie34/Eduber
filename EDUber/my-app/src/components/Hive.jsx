@@ -165,6 +165,7 @@ class Hive extends React.Component {
   @action
   handleFormSubmit0 = e => {
   this.props.store.rango(this.num);
+  this.generateMessage(this.props.store.grids[this.num].contentInput);
  	this.newGirdTitle = "";
   this.newGridContentInput = "";
 
