@@ -10,6 +10,6 @@ A tool for multipart transmission on nkn
   
   
 BY
-    Juncheng, 5swing 
+    Juncheng, 5swind 
  
  at BitRun 48h hackathon
