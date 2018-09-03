@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 140s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 250px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  margin-top: 80px; 
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.txtContent {
+  margin: 20px;
+}
+
+.txt {
+  position: absolute;
+  left: 0px;
+}
+
+.picDiv {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.Avatar {
+  margin: 5px;
+}
+
+.inputBox {
+  height: 40px;
+  border: none;
+  border-bottom: 2px;
+}
+
+.inputBox[type=text]:focus {
+  border: 3px solid #000;
+}
+
+.card {
+  margin: 20px;
+  max-width: 345px;
+}
+
+.media {
+  height: 200px;
+  paddingTop: '56.25%'; 
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+ul {
+ list-style-type: none;
+ list-style-position: outside;
+ list-style-image: none;
+}
+
+
+.gridformat0 {
+  width: 50%;
+  display: inline-block;
+}
+.gridformat1 {
+  width: 30%;
+  display: inline-block;
+}
+
+.listPart {
+  width: 50%;
+  display: inline-block;
+}
+
+.uiPart {
+  width: 50%;
+  display: inline-block;
+}
+  
+ul {
+  list-style-type: none;
+  width: 500px;
+}
+ 
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+li {
+  padding: 10px;
+  overflow: auto;
+}
+ 
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
